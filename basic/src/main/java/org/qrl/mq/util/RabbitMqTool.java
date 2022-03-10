@@ -10,6 +10,8 @@ import com.rabbitmq.client.ConnectionFactory;
  */
 public class RabbitMqTool {
 
+    public final static String DEFAULT_QUEUE = "Hello";
+
     /**
      * 初始化 ConnectionFactory
      */
