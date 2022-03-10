@@ -10,7 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>rabbitmq-helloWorld</module>
-        <module>log</module>
+        <module>basic</module>
         <module>rabbitmq-WorkQueues</module>
     </modules>
 
