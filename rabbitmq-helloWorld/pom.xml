@@ -16,6 +16,7 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <!--按照jdk8进行便衣-->
     <build>
         <plugins>
             <plugin>
@@ -29,13 +30,13 @@
         </plugins>
     </build>
     <dependencies>
-        <!--rabbitmq 依赖客户端-->
+        <!--rabbitmq 客户端-->
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
             <version>5.14.2</version>
         </dependency>
-        <!--操作文件流的一个依赖-->
+        <!--操作文件流依赖-->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
