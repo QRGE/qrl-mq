@@ -1,0 +1,12 @@
+13:39:00.537 [main] ERROR org.qrl.mq.log.Main - 15- Error Message!
+13:39:00.538 [main] WARN  org.qrl.mq.log.Main - 16- Warn Message!
+13:39:00.539 [main] INFO  org.qrl.mq.log.Main - 17- Info Message!
+13:39:00.539 [main] DEBUG org.qrl.mq.log.Main - 18- Debug Message!
+13:41:32.416 [main] ERROR org.qrl.mq.log.Main - 15- Error Message!
+13:41:32.418 [main] WARN  org.qrl.mq.log.Main - 16- Warn Message!
+13:41:32.418 [main] INFO  org.qrl.mq.log.Main - 17- Info Message!
+13:41:32.418 [main] DEBUG org.qrl.mq.log.Main - 18- Debug Message!
+13:42:09.360 [main] ERROR org.qrl.mq.log.Main - 15- Error Message!
+13:42:09.361 [main] WARN  org.qrl.mq.log.Main - 16- Warn Message!
+13:42:09.362 [main] INFO  org.qrl.mq.log.Main - 17- Info Message!
+13:42:09.362 [main] DEBUG org.qrl.mq.log.Main - 18- Debug Message!
