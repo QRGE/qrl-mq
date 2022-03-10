@@ -17,12 +17,13 @@ public class Producer {
     private final static String QUEUE_NAME = "Hello";
 
     public static void main(String[] args) {
-        //创建一个连接工厂
+        // 创建一个连接工厂
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("120.77.16.74");
         factory.setUsername("admin");
         factory.setPassword("admin");
-        // channel 实现了自动 close 接口自动关闭不需要显示关闭
+        factory.setVirtualHost("/");
+        // channel 实现了自动 close 接口自动关闭不需要显示 关闭
         try (
              // 创建队列
              Connection connection = factory.newConnection();
