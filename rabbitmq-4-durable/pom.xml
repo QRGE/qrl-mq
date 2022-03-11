@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>basic</artifactId>
+    <artifactId>rabbitmq-4-durable</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,12 +18,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
+            <groupId>org.qrl</groupId>
+            <artifactId>basic</artifactId>
         </dependency>
     </dependencies>
 
