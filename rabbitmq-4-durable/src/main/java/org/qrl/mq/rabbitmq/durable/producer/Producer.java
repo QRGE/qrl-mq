@@ -3,12 +3,10 @@ package org.qrl.mq.rabbitmq.durable.producer;
 import cn.hutool.core.util.RandomUtil;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
-import lombok.SneakyThrows;
 import org.qrl.mq.util.RabbitMqTool;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
