@@ -29,6 +29,7 @@ public class Producer {
                 public void run() {
                     String randomString = RandomUtil.randomString(10);
                     try {
+                        // 发布消息时设置属性 MessageProperties.PERSISTENT_TEXT_PLAIN 表示发布的消息持久化
                         channel.basicPublish("", RabbitMqTool.DEFAULT_QUEUE, MessageProperties.PERSISTENT_TEXT_PLAIN, randomString.getBytes(StandardCharsets.UTF_8));
                     } catch (IOException e) {
                         System.out.println("发送消息错误");
