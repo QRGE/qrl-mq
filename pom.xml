@@ -14,6 +14,7 @@
         <module>rabbitmq-2-WorkQueues</module>
         <module>rabbitmq-3-messageResponse</module>
         <module>rabbitmq-4-durable</module>
+        <module>rabbitmq-5-msgSendStrategy</module>
     </modules>
 
     <properties>
