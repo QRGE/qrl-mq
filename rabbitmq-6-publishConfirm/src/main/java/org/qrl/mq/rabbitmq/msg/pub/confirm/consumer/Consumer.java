@@ -1,4 +1,4 @@
-package org.qrl.mq.rabbitmq.strategy.consumer;
+package org.qrl.mq.rabbitmq.msg.pub.confirm.consumer;
 
 import cn.hutool.core.thread.ThreadUtil;
 import com.rabbitmq.client.CancelCallback;
@@ -30,7 +30,6 @@ public class Consumer {
             };
             System.out.println("消费者: " + thread +" 启动等待消费 ......");
             // prefetchCount = 1代表不公平分发, 2 及以上设置预取值的个数
-            // 预取值定义通道上允许的未确认消息的最大数量
             // Qos: quality of service / 预取值，设置消费者获取消息的个数
             channel.basicQos(prefetchCount);
             //  设置自动应答为 false, 进行手动应答

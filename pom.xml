@@ -15,6 +15,7 @@
         <module>rabbitmq-3-messageResponse</module>
         <module>rabbitmq-4-durable</module>
         <module>rabbitmq-5-msgSendStrategy</module>
+        <module>rabbitmq-6-publishConfirm</module>
     </modules>
 
     <properties>
