@@ -92,7 +92,7 @@ public class Producer {
                 channel.basicPublish("", queueName, MessageProperties.PERSISTENT_TEXT_PLAIN, randomString.getBytes(StandardCharsets.UTF_8));
             }
             long endTime = System.currentTimeMillis();
-            System.out.printf("异步确认模式下发送%d条消息需要的时间: %dms%n, 确认消息条数: ", MSG_COUNT, endTime - startTime);
+            System.out.printf("异步确认模式下发送%d条消息需要的时间: %dms, 确认消息条数: %d, 丢失消息条数: %d %n", MSG_COUNT, endTime - startTime, confirmCount, unConfirmCount);
         } catch (Exception e) {
             e.printStackTrace();
         }

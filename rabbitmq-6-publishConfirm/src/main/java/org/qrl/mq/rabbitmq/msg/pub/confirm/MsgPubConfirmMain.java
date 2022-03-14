@@ -1,6 +1,7 @@
 package org.qrl.mq.rabbitmq.msg.pub.confirm;
 
 
+import cn.hutool.core.thread.ThreadUtil;
 import org.qrl.mq.rabbitmq.msg.pub.confirm.producer.Producer;
 
 /**
@@ -12,8 +13,8 @@ import org.qrl.mq.rabbitmq.msg.pub.confirm.producer.Producer;
 public class MsgPubConfirmMain {
 
     public static void main(String[] args) {
-        Producer.msgConfirmSynch();
-        Producer.msgConfirmBatch();
-        Producer.msgConfirmAsynch();
+        ThreadUtil.execAsync(Producer::msgConfirmSynch);
+        ThreadUtil.execAsync(Producer::msgConfirmBatch);
+        ThreadUtil.execAsync(Producer::msgConfirmAsynch);
     }
 }
