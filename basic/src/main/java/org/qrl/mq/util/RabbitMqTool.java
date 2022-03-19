@@ -3,6 +3,8 @@ package org.qrl.mq.util;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @author qr
@@ -11,6 +13,8 @@ import com.rabbitmq.client.ConnectionFactory;
 public class RabbitMqTool {
 
     public final static String DEFAULT_QUEUE = "Hello";
+
+    public final static String EXCHANGE_LOG = "Log";
 
     /**
      * 初始化 ConnectionFactory
@@ -30,5 +34,12 @@ public class RabbitMqTool {
     public static Channel getChannel() throws Exception {
         Connection connection = factory.newConnection();
         return connection.createChannel();
+    }
+
+    @AllArgsConstructor
+    @Getter
+    public enum ExchangeMode {
+        // 发布订阅模式
+        fanout;
     }
 }
