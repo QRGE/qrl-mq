@@ -1,4 +1,4 @@
-package org.qrl.mq.rabbitmq.exchange.fanout;
+package qr.program.mq.rabbitmq.exchange.fanout.producer;
 
 import cn.hutool.core.util.RandomUtil;
 import com.rabbitmq.client.Channel;
@@ -23,14 +23,14 @@ public class Producer {
 
     @SneakyThrows
     public void emitLog(Integer num) {
-        String exchange = RabbitMqTool.EXCHANGE_LOG;
         Channel channel = RabbitMqTool.getChannel();
+        channel.exchangeDeclare(RabbitMqTool.EXCHANGE_LOG, "fanout");
         System.out.printf("生产者: %s 正在工作。。。%n", name);
         // 发布给指定 boundingKey 的对列
         for (int i = 0; i < num; i++) {
             // 发布10位的随机字符
             String content = RandomUtil.randomString(10);
-            channel.basicPublish(exchange, "", null, content.getBytes(StandardCharsets.UTF_8));
+            channel.basicPublish(RabbitMqTool.EXCHANGE_LOG, RabbitMqTool.LOG_ROUTING_KEY, null, content.getBytes(StandardCharsets.UTF_8));
         }
     }
 }

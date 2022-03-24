@@ -16,6 +16,8 @@ public class RabbitMqTool {
 
     public final static String EXCHANGE_LOG = "Log";
 
+    public final static String LOG_ROUTING_KEY = "log_link";
+
     /**
      * 初始化 ConnectionFactory
      */

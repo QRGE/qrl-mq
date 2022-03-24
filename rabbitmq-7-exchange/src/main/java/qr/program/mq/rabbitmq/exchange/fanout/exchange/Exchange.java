@@ -1,4 +1,4 @@
-package org.qrl.mq.rabbitmq.exchange.fanout;
+package qr.program.mq.rabbitmq.exchange.fanout.exchange;
 
 import com.rabbitmq.client.Channel;
 import lombok.SneakyThrows;
