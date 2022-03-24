@@ -27,6 +27,18 @@ public class RabbitMqTool {
         String yellow = "yellow";
     }
 
+    public interface Topic {
+        String exchange = "Topic";
+        String queue1 = "queue1";
+        String queue2 = "queue2";
+        String queue3 = "queue3";
+        String queue4 = "queue4";
+        String key1 = "Munch.d.Luffy";
+        String key2 = "Gore.D.Roger";
+        String key3 = "Trafalgar.D.Rowe";
+        String key4 = "*.D.*";
+    }
+
     /**
      * 初始化 ConnectionFactory
      */
