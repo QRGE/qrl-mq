@@ -1,7 +1,6 @@
 package qr.program.mq.rabbitmq.exchange.fanout;
 
 import qr.program.mq.rabbitmq.exchange.fanout.consumer.Consumer;
-import qr.program.mq.rabbitmq.exchange.fanout.exchange.Exchange;
 import qr.program.mq.rabbitmq.exchange.fanout.producer.Producer;
 
 /**

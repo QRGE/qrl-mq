@@ -18,6 +18,15 @@ public class RabbitMqTool {
 
     public final static String LOG_ROUTING_KEY = "log_link";
 
+    public interface DirectDemo {
+        String exchange = "Direct_Log";
+        String queue1 = "queue1";
+        String queue2 = "queue2";
+        String green = "green";
+        String black = "black";
+        String yellow = "yellow";
+    }
+
     /**
      * 初始化 ConnectionFactory
      */
