@@ -1,5 +1,7 @@
 package qr.program.mq.rabbitmq.exchange.direct;
 
+import cn.hutool.cron.CronUtil;
+import cn.hutool.cron.task.Task;
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
@@ -9,6 +11,8 @@ import org.qrl.mq.util.RabbitMqTool;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static org.qrl.mq.util.RabbitMqTool.DirectDemo.*;
 
@@ -33,14 +37,13 @@ public class Produce {
             bindingKeyMap.put(yellow,"黄色消息");
             //debug 没有消费这接收这个消息 所有就丢失了
             bindingKeyMap.put("blue","蓝色消息");
-            while (true) {
-                for (Map.Entry<String, String> bindingKeyEntry: bindingKeyMap.entrySet()){
-                    String bindingKey = bindingKeyEntry.getKey();
-                    String message = bindingKeyEntry.getValue();
-                    channel.basicPublish(exchange, bindingKey, null, message.getBytes(StandardCharsets.UTF_8));
-                    System.out.println("ConsumeMain send: " + message);
-                }
+            for (Map.Entry<String, String> bindingKeyEntry: bindingKeyMap.entrySet()){
+                String bindingKey = bindingKeyEntry.getKey();
+                String message = bindingKeyEntry.getValue();
+                channel.basicPublish(exchange, bindingKey, null, message.getBytes(StandardCharsets.UTF_8));
+                System.out.println("ConsumeMain send: " + message);
             }
+
         }
     }
 }
