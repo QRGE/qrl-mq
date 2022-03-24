@@ -1,7 +1,10 @@
 package qr.program.mq.rabbitmq.exchange.fanout;
 
+import cn.hutool.core.thread.ThreadUtil;
 import qr.program.mq.rabbitmq.exchange.fanout.consumer.Consumer;
 import qr.program.mq.rabbitmq.exchange.fanout.producer.Producer;
+
+import java.util.concurrent.Callable;
 
 /**
  * @author qr
@@ -10,8 +13,8 @@ import qr.program.mq.rabbitmq.exchange.fanout.producer.Producer;
 public class Main {
 
     public static void main(String[] args) {
-        new Producer("生产者1号").emitLog(100);
-        new Consumer().receiveLog();
-        new Consumer().receiveLog();
+        ThreadUtil.execAsync(() -> new Producer("生产者1号").emitLog(10000));
+        ThreadUtil.execAsync(() -> new Consumer().receiveLog());
+        ThreadUtil.execAsync(() -> new Consumer().receiveLog());
     }
 }

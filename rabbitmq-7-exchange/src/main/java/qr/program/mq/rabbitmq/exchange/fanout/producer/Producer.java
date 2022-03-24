@@ -2,6 +2,7 @@ package qr.program.mq.rabbitmq.exchange.fanout.producer;
 
 import cn.hutool.core.util.RandomUtil;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.MessageProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class Producer {
         for (int i = 0; i < num; i++) {
             // 发布10位的随机字符
             String content = RandomUtil.randomString(10);
-            channel.basicPublish(RabbitMqTool.EXCHANGE_LOG, RabbitMqTool.LOG_ROUTING_KEY, null, content.getBytes(StandardCharsets.UTF_8));
+            channel.basicPublish(RabbitMqTool.EXCHANGE_LOG, RabbitMqTool.LOG_ROUTING_KEY, MessageProperties.PERSISTENT_TEXT_PLAIN, content.getBytes(StandardCharsets.UTF_8));
         }
     }
 }

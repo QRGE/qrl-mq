@@ -31,7 +31,7 @@ public class Consumer {
         // 绑定对列和交换机
         channel.queueBind(queue, exchange, RabbitMqTool.LOG_ROUTING_KEY);
         DeliverCallback deliverCallback = (consumerTag, message) -> {
-            System.out.println("Receive msg: " + new String(message.getBody(), StandardCharsets.UTF_8));
+            System.out.println(queue + " receives msg: " + new String(message.getBody(), StandardCharsets.UTF_8));
         };
         CancelCallback cancelCallback = consumerTag -> System.out.println("Reject msgId: " + consumerTag);
         channel.basicConsume(queue, true, deliverCallback, cancelCallback);
