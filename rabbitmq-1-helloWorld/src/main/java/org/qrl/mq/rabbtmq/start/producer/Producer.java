@@ -19,9 +19,9 @@ public class Producer {
     public static void main(String[] args) {
         // 创建一个连接工厂
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("120.77.16.74");
-        factory.setUsername("admin");
-        factory.setPassword("admin");
+        factory.setHost("1.12.221.233");
+        factory.setUsername("qr");
+        factory.setPassword("QRWUDI666");
         factory.setVirtualHost("/");
         // channel 实现了自动 close 接口自动关闭不需要显示 关闭
         try (

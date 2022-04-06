@@ -8,6 +8,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
  * TODO 这里并没有说明为什么线程会轮流接收消息
+ * 默认情况下
  * @author qr
  * @date 2022/3/10 15:06
  */

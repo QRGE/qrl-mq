@@ -12,9 +12,9 @@ public class Consumer {
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("120.77.16.74");
-        factory.setUsername("admin");
-        factory.setPassword("admin");
+        factory.setHost("1.12.221.233");
+        factory.setUsername("qr");
+        factory.setPassword("QRWUDI666");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         System.out.println("等待接收消息 ....");
