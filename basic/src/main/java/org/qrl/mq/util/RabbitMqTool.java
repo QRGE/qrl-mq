@@ -44,9 +44,9 @@ public class RabbitMqTool {
      */
     private final static ConnectionFactory factory = new ConnectionFactory();
     static {
-        factory.setHost("120.77.16.74");
-        factory.setUsername("admin");
-        factory.setPassword("admin");
+        factory.setHost("1.12.221.233");
+        factory.setUsername("qr");
+        factory.setPassword("QRWUDI666");
     }
 
     /**
