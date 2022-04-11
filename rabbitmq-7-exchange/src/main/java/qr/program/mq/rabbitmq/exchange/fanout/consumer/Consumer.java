@@ -1,5 +1,6 @@
 package qr.program.mq.rabbitmq.exchange.fanout.consumer;
 
+import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.CancelCallback;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
@@ -24,7 +25,7 @@ public class Consumer {
     public void receiveLog() {
         String exchange = RabbitMqTool.EXCHANGE_LOG;
         Channel channel = RabbitMqTool.getChannel();
-        channel.exchangeDeclare(exchange, "fanout");
+        channel.exchangeDeclare(exchange, BuiltinExchangeType.FANOUT);
         // 创建一个默认对列
         String queue = channel.queueDeclare().getQueue();
         System.out.printf("消费者: %s 创建完成%n", queue);

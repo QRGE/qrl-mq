@@ -1,6 +1,7 @@
 package qr.program.mq.rabbitmq.exchange.fanout.producer;
 
 import cn.hutool.core.util.RandomUtil;
+import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.MessageProperties;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ public class Producer {
     @SneakyThrows
     public void emitLog(Integer num) {
         Channel channel = RabbitMqTool.getChannel();
-        channel.exchangeDeclare(RabbitMqTool.EXCHANGE_LOG, "fanout");
+        channel.exchangeDeclare(RabbitMqTool.EXCHANGE_LOG, BuiltinExchangeType.FANOUT);
         System.out.printf("生产者: %s 正在工作。。。%n", name);
         // 发布给指定 boundingKey 的对列
         for (int i = 0; i < num; i++) {
