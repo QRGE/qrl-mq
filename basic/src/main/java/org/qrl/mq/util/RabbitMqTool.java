@@ -27,6 +27,12 @@ public class RabbitMqTool {
         String yellow = "yellow";
     }
 
+    public interface DeadQueueDemo {
+        String normalExchange = "normal_exchange";
+        String deadExchange = "dead_exchange";
+        String roundingKey1 = "zhangsan";
+    }
+
     public interface Topic {
         String exchange = "Topic";
         String queue1 = "queue1";
