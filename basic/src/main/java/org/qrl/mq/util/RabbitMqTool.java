@@ -27,10 +27,16 @@ public class RabbitMqTool {
         String yellow = "yellow";
     }
 
+    /**
+     * 死信队列的一些配置
+     */
     public interface DeadQueueDemo {
         String normalExchange = "normal_exchange";
         String deadExchange = "dead_exchange";
-        String roundingKey1 = "zhangsan";
+        String roundingKeyNormal = "zhangsan";
+        String roundingKeyDeadLetter = "lisi";
+        String deadQueue = "dead-queue";
+        String normalQueue = "normal-queue";
     }
 
     public interface Topic {
