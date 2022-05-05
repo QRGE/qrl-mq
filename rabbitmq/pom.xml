@@ -18,6 +18,8 @@
         <module>0-basic</module>
         <module>1-helloWorld</module>
         <module>2-WorkQueues</module>
+        <module>3-messageResponse</module>
+        <module>4-durable</module>
     </modules>
 
     <properties>
