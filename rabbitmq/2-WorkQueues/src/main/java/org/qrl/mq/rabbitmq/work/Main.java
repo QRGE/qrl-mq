@@ -7,7 +7,7 @@ import org.qrl.mq.rabbitmq.work.producer.Producer;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
- * TODO 这里并没有说明为什么线程会轮流接收消息
+ * rabbitmq 默认的发布消息策略就是轮训
  * 默认情况下
  * @author qr
  * @date 2022/3/10 15:06
@@ -15,11 +15,11 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class Main {
 
     public static void main(String[] args) {
+        ThreadUtil.execAsync(Producer::produce);
         ScheduledThreadPoolExecutor executor = ThreadUtil.createScheduledExecutor(10);
         for (int i = 0; i < 5; i++) {
             int finalI = i;
             executor.execute(() -> new Worker().work(finalI));
         }
-        Producer.produce();
     }
 }

@@ -17,6 +17,7 @@
     <modules>
         <module>0-basic</module>
         <module>1-helloWorld</module>
+        <module>2-WorkQueues</module>
     </modules>
 
     <properties>

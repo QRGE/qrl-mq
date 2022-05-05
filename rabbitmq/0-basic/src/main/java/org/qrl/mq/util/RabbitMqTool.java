@@ -6,6 +6,11 @@ import com.rabbitmq.client.ConnectionFactory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.Properties;
+
 /**
  * @author qr
  * @date 2022/3/10 14:51
@@ -56,10 +61,20 @@ public class RabbitMqTool {
      */
     private final static ConnectionFactory factory = new ConnectionFactory();
     static {
-        factory.setHost("1.12.221.233");
-        factory.setUsername("qr");
-        factory.setPassword("QRWUDI666");
+        try {
+            InputStream inputStream = RabbitMqTool.class.getResourceAsStream("/rabbitmq.properties");
+            assert inputStream != null;
+            InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+            Properties config = new Properties();
+            config.load(reader);
+            factory.setHost(config.getProperty("ip"));
+            factory.setUsername(config.getProperty("username"));
+            factory.setPassword(config.getProperty("password"));
+        } catch (Exception e) {
+            System.err.println("创建 RabbitMq 连接失败");
+        }
     }
+
 
     /**
      * 建立信道 channel
