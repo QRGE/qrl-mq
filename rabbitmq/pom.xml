@@ -20,6 +20,10 @@
         <module>2-WorkQueues</module>
         <module>3-messageResponse</module>
         <module>4-durable</module>
+        <module>5-msgSendStrategy</module>
+        <module>6-publishConfirm</module>
+        <module>7-exchange</module>
+        <module>8-deadQueue</module>
     </modules>
 
     <properties>
