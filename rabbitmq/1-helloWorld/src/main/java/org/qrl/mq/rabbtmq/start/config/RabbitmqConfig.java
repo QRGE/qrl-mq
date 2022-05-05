@@ -27,8 +27,8 @@ public class RabbitmqConfig {
             InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
             properties.load(reader);
             this.ip = properties.getProperty("ip");
-            this.password = properties.getProperty("username");
-            this.username = properties.getProperty("password");
+            this.username = properties.getProperty("username");
+            this.password = properties.getProperty("password");
         }catch (Exception e) {
             System.out.println("读取配置文件失败");
         }
