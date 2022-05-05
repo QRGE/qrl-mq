@@ -2,4 +2,8 @@
 
 target
 
+*.class
+*.log
+*.properties
+!rabbitmq.properties.template
 rabbitmq.properties
